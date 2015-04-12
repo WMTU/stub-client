@@ -729,14 +729,6 @@
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                         </subviews>
-                        <backgroundFilters>
-                            <ciFilter name="CIGaussianBlur">
-                                <configuration>
-                                    <null key="inputImage"/>
-                                    <real key="inputRadius" value="10"/>
-                                </configuration>
-                            </ciFilter>
-                        </backgroundFilters>
                     </view>
                     <connections>
                         <segue destination="bjB-N0-Tco" kind="show" identifier="LoggedIn" id="iYX-fV-egz"/>
@@ -790,14 +782,6 @@
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                         </subviews>
-                        <backgroundFilters>
-                            <ciFilter name="CIGaussianBlur">
-                                <configuration>
-                                    <null key="inputImage"/>
-                                    <real key="inputRadius" value="10"/>
-                                </configuration>
-                            </ciFilter>
-                        </backgroundFilters>
                     </view>
                 </viewController>
                 <customObject id="Vys-aj-HHY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
