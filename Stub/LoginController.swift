@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  Stub
 //
 //  Created by Neil Betham on 4/12/15.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class LoginController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
