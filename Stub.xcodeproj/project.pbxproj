@@ -14,7 +14,6 @@
 		4D72F7F11ADB19FA004CB39A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D72F7EF1ADB19FA004CB39A /* Main.storyboard */; };
 		4D72F7FD1ADB19FA004CB39A /* StubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F7FC1ADB19FA004CB39A /* StubTests.swift */; };
 		4DD947BC1ADB25C300DE6338 /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD947BB1ADB25C300DE6338 /* TicketController.swift */; };
-		D9D49D3DFC17FD991BACC270 /* Pods_Stub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CABA8AAC3B19840B2F6FD5 /* Pods_Stub.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +38,6 @@
 		4D72F7FB1ADB19FA004CB39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D72F7FC1ADB19FA004CB39A /* StubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubTests.swift; sourceTree = "<group>"; };
 		4DD947BB1ADB25C300DE6338 /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
-		6FECDCE6F6D28A1DA1D2A4B6 /* Pods-Stub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stub/Pods-Stub.release.xcconfig"; sourceTree = "<group>"; };
-		99CABA8AAC3B19840B2F6FD5 /* Pods_Stub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF7F2017A90B8A2CB2ED6816 /* Pods-Stub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stub/Pods-Stub.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D49D3DFC17FD991BACC270 /* Pods_Stub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +64,6 @@
 				4D72F7E31ADB19FA004CB39A /* Stub */,
 				4D72F7F91ADB19FA004CB39A /* StubTests */,
 				4D72F7E21ADB19FA004CB39A /* Products */,
-				E9475FFDCE4F9CCD7133EE59 /* Pods */,
-				C1F7BBF2A748B79496D61C9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,23 +115,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C1F7BBF2A748B79496D61C9A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				99CABA8AAC3B19840B2F6FD5 /* Pods_Stub.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E9475FFDCE4F9CCD7133EE59 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AF7F2017A90B8A2CB2ED6816 /* Pods-Stub.debug.xcconfig */,
-				6FECDCE6F6D28A1DA1D2A4B6 /* Pods-Stub.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,12 +122,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D72F8001ADB19FA004CB39A /* Build configuration list for PBXNativeTarget "Stub" */;
 			buildPhases = (
-				3B0B402FDF5557C988CF8DE5 /* Check Pods Manifest.lock */,
 				4D72F7DD1ADB19FA004CB39A /* Sources */,
 				4D72F7DE1ADB19FA004CB39A /* Frameworks */,
 				4D72F7DF1ADB19FA004CB39A /* Resources */,
-				395BECF1AD3CD86A03D4892C /* Embed Pods Frameworks */,
-				C3F23B3017355B7E0B578F9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,54 +208,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		395BECF1AD3CD86A03D4892C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stub/Pods-Stub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B0B402FDF5557C988CF8DE5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C3F23B3017355B7E0B578F9C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stub/Pods-Stub-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D72F7DD1ADB19FA004CB39A /* Sources */ = {
@@ -408,7 +333,6 @@
 		};
 		4D72F8011ADB19FA004CB39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF7F2017A90B8A2CB2ED6816 /* Pods-Stub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -420,7 +344,6 @@
 		};
 		4D72F8021ADB19FA004CB39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FECDCE6F6D28A1DA1D2A4B6 /* Pods-Stub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

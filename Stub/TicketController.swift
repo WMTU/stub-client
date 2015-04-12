@@ -21,7 +21,16 @@ class TicketController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+    @IBAction func print_dj(sender: AnyObject) {
+        
+    }
+
+    @IBAction func print_both(sender: AnyObject) {
+        
+    }
     
-    
+    @IBAction func print_band(sender: AnyObject) {
+        
+    }
 }
 

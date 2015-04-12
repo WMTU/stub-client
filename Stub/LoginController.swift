@@ -10,6 +10,10 @@ import Cocoa
 
 class LoginController: NSViewController {
 
+    @IBOutlet weak var email: NSTextField!
+    @IBOutlet weak var password: NSSecureTextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,9 @@ class LoginController: NSViewController {
         }
     }
 
+    @IBAction func login(sender: AnyObject) {
+        
+    }
 
 }
 

@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3A2F1A1E-B17C-4750-AE7B-0DADB6ACE97C</string>
+	<string>D8A37D59-ED66-4607-B7CE-074C864781F6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Stub</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>github.com:WMTU/stub-client.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Stub.xcworkspace</string>
+	<string>Stub.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8C6A3D657FDD1B074D7E0F061E96A0B9BC706D68</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:WMTU/stub-client.git</string>
