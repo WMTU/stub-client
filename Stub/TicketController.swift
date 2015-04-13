@@ -16,6 +16,10 @@ class TicketController: NSViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear() {
+        self
+    }
+    
     override var representedObject: AnyObject? {
         didSet {
             // Update the view, if already loaded.
