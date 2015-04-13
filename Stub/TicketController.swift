@@ -97,18 +97,17 @@ class TicketController: NSViewController {
     }
     
     func print_label(zpl: String){
-        println("Received zpl - " + zpl)
-//        let input_pipe = NSPipe()
-//        
-//        let task = NSTask()
-//        task.launchPath = "/usr/bin/lpr"
-//        task.arguments = ["-P", printer_select.selectedItem!.title, "-o", "raw"]
-//        task.standardInput = input_pipe
-//        
-//        task.launch()
-//        
-//        input_pipe.fileHandleForWriting.writeData(zpl.dataUsingEncoding(NSUTF8StringEncoding)!)
-//        input_pipe.fileHandleForWriting.closeFile()
+        let input_pipe = NSPipe()
+        
+        let task = NSTask()
+        task.launchPath = "/usr/bin/lpr"
+        task.arguments = ["-P", printer_select.selectedItem!.title, "-o", "raw"]
+        task.standardInput = input_pipe
+        
+        task.launch()
+        
+        input_pipe.fileHandleForWriting.writeData(zpl.dataUsingEncoding(NSUTF8StringEncoding)!)
+        input_pipe.fileHandleForWriting.closeFile()
     }
 }
 
