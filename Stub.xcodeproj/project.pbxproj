@@ -14,6 +14,7 @@
 		4D72F7FD1ADB19FA004CB39A /* StubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F7FC1ADB19FA004CB39A /* StubTests.swift */; };
 		4DC5FDF71ADB433900545B6C /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */; };
 		4DD947BC1ADB25C300DE6338 /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD947BB1ADB25C300DE6338 /* TicketController.swift */; };
+		4DEE192D1ADBF9C100813350 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE192C1ADBF9C100813350 /* SettingsController.swift */; };
 		811524B00DAD75B5715836BD /* Pods_Stub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3163F298B9917A75FE52EFB /* Pods_Stub.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		4D72F7FC1ADB19FA004CB39A /* StubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubTests.swift; sourceTree = "<group>"; };
 		4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
 		4DD947BB1ADB25C300DE6338 /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
+		4DEE192C1ADBF9C100813350 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		87C5DF1E7A634AD0E2AFB0C8 /* Pods-Stub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stub/Pods-Stub.release.xcconfig"; sourceTree = "<group>"; };
 		B3163F298B9917A75FE52EFB /* Pods_Stub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				4D72F7E41ADB19FA004CB39A /* Supporting Files */,
 				4DD947BB1ADB25C300DE6338 /* TicketController.swift */,
 				4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */,
+				4DEE192C1ADBF9C100813350 /* SettingsController.swift */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD947BC1ADB25C300DE6338 /* TicketController.swift in Sources */,
+				4DEE192D1ADBF9C100813350 /* SettingsController.swift in Sources */,
 				4DC5FDF71ADB433900545B6C /* ReplaceSegue.swift in Sources */,
 				4D72F7E91ADB19FA004CB39A /* LoginController.swift in Sources */,
 				4D72F7E71ADB19FA004CB39A /* AppDelegate.swift in Sources */,

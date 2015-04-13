@@ -12,10 +12,16 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var token:String = ""
-    var host:String = "http://localhost:3000"
+    var host:String = ""
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.stringForKey("host") != nil) {
+            host = defaults.stringForKey("host")!
+        } else {
+            host = "http://localhost:3000"
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

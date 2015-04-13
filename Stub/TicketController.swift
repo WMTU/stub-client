@@ -12,7 +12,7 @@ import Alamofire
 class TicketController: NSViewController {
     @IBOutlet weak var token_field: NSTextFieldCell!
     @IBOutlet weak var printer_select: NSPopUpButton!
-    
+    @IBOutlet weak var spinner: NSProgressIndicator!
     
     var manager = Alamofire.Manager(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     var appDelegate: AppDelegate?
@@ -63,39 +63,52 @@ class TicketController: NSViewController {
     }
     
     @IBAction func print_dj(sender: AnyObject) {
+        spinner.hidden = false
+        spinner.startAnimation(self)
         manager.request(.POST, appDelegate!.host + "/api/tickets/dj")
         .responseString { (_, _, string, _) in
+            self.spinner.hidden = true
+            self.spinner.stopAnimation(self)
             self.print_label(string!)
         }
         
     }
 
     @IBAction func print_both(sender: AnyObject) {
+        spinner.hidden = false
+        spinner.startAnimation(self)
         manager.request(.POST, appDelegate!.host + "/api/tickets/both")
         .responseString { (_, _, string, _) in
+            self.spinner.hidden = true
+            self.spinner.stopAnimation(self)
             self.print_label(string!)
         }
     }
     
     @IBAction func print_band(sender: AnyObject) {
+        spinner.hidden = false
+        spinner.startAnimation(self)
         manager.request(.POST, appDelegate!.host + "/api/tickets/band")
         .responseString { (_, _, string, _) in
+            self.spinner.hidden = true
+            self.spinner.stopAnimation(self)
             self.print_label(string!)
         }
     }
     
     func print_label(zpl: String){
-        let input_pipe = NSPipe()
-        
-        let task = NSTask()
-        task.launchPath = "/usr/bin/lpr"
-        task.arguments = ["-P", printer_select.selectedItem!.title, "-o", "raw"]
-        task.standardInput = input_pipe
-        
-        task.launch()
-        
-        input_pipe.fileHandleForWriting.writeData(zpl.dataUsingEncoding(NSUTF8StringEncoding)!)
-        input_pipe.fileHandleForWriting.closeFile()
+        println("Received zpl - " + zpl)
+//        let input_pipe = NSPipe()
+//        
+//        let task = NSTask()
+//        task.launchPath = "/usr/bin/lpr"
+//        task.arguments = ["-P", printer_select.selectedItem!.title, "-o", "raw"]
+//        task.standardInput = input_pipe
+//        
+//        task.launch()
+//        
+//        input_pipe.fileHandleForWriting.writeData(zpl.dataUsingEncoding(NSUTF8StringEncoding)!)
+//        input_pipe.fileHandleForWriting.closeFile()
     }
 }
 

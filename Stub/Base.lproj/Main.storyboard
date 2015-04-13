@@ -253,6 +253,9 @@
                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
+                                <connections>
+                                    <action selector="password_submit:" target="XfG-lQ-9wD" id="HyB-M1-PwD"/>
+                                </connections>
                             </secureTextField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nfp-W6-aH5">
                                 <rect key="frame" x="199" y="82" width="82" height="32"/>
@@ -265,6 +268,16 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="login:" target="XfG-lQ-9wD" id="lkI-Mw-gN0"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1L-C3-DiF">
+                                <rect key="frame" x="416" y="13" width="50" height="32"/>
+                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WyF-CT-Ad2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="loy-KI-Q2U" kind="sheet" id="ab1-3Z-YFl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -293,6 +306,61 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="729" y="245"/>
+        </scene>
+        <!--Settings Controller-->
+        <scene sceneID="cpq-uI-vVn">
+            <objects>
+                <viewController id="loy-KI-Q2U" customClass="SettingsController" customModule="Stub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="RaH-pX-T4U">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="138"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBp-0Y-4es">
+                                <rect key="frame" x="101" y="58" width="329" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Mjy-Iz-iyp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="server_box:" target="loy-KI-Q2U" id="CwS-Px-du0"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGn-Rp-8du">
+                                <rect key="frame" x="184" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XY5-4w-LCO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="close_sheet:" target="loy-KI-Q2U" id="jir-C6-kxp"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-Hr-QeT">
+                                <rect key="frame" x="18" y="95" width="414" height="23"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Settings" id="oKB-Iu-Rpl">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nxz-M8-qeV">
+                                <rect key="frame" x="18" y="63" width="77" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stub Server" id="3nm-1Y-tRo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="server_text" destination="UBp-0Y-4es" id="yM2-m2-Vb5"/>
+                    </connections>
+                </viewController>
+                <customObject id="LjW-Ih-pVY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312" y="179"/>
         </scene>
         <!--Ticket Controller-->
         <scene sceneID="TbN-Pc-V6u">
@@ -387,11 +455,15 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <progressIndicator hidden="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="1" doubleValue="1" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="sCL-F9-Zpd">
+                                <rect key="frame" x="444" y="20" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="GoA-l2-Hmf" secondAttribute="centerX" id="0O6-so-0z0"/>
                             <constraint firstAttribute="trailing" secondItem="Iyh-3d-acj" secondAttribute="trailing" constant="130" id="5Re-R6-FUj"/>
                             <constraint firstItem="8Jc-Jv-pjS" firstAttribute="centerY" secondItem="GoA-l2-Hmf" secondAttribute="centerY" id="8hf-KA-4At"/>
+                            <constraint firstAttribute="trailing" secondItem="sCL-F9-Zpd" secondAttribute="trailing" constant="20" id="Ivk-9q-7nH"/>
                             <constraint firstAttribute="trailing" secondItem="DEX-8d-L5A" secondAttribute="trailing" constant="35" id="KxC-8t-Ekt"/>
                             <constraint firstItem="GoA-l2-Hmf" firstAttribute="leading" secondItem="HkP-Gm-K4k" secondAttribute="trailing" constant="8" id="NcH-33-SmL"/>
                             <constraint firstItem="DEX-8d-L5A" firstAttribute="top" secondItem="z2P-u0-lv4" secondAttribute="top" constant="20" id="Phz-gq-Txc"/>
@@ -399,6 +471,7 @@
                             <constraint firstItem="HkP-Gm-K4k" firstAttribute="centerY" secondItem="GoA-l2-Hmf" secondAttribute="centerY" id="lqg-7G-fVu"/>
                             <constraint firstAttribute="trailing" secondItem="82W-aX-Bv7" secondAttribute="trailing" constant="20" id="mqW-dL-RZs"/>
                             <constraint firstItem="GoA-l2-Hmf" firstAttribute="top" secondItem="82W-aX-Bv7" secondAttribute="bottom" constant="44" id="rRn-r8-IRq"/>
+                            <constraint firstAttribute="bottom" secondItem="sCL-F9-Zpd" secondAttribute="bottom" constant="20" id="t1E-tu-vpu"/>
                             <constraint firstItem="82W-aX-Bv7" firstAttribute="top" secondItem="DEX-8d-L5A" secondAttribute="bottom" constant="8" id="v2t-09-PbF"/>
                             <constraint firstItem="8Jc-Jv-pjS" firstAttribute="leading" secondItem="GoA-l2-Hmf" secondAttribute="trailing" constant="8" id="wD0-oA-0Vl"/>
                             <constraint firstAttribute="centerX" secondItem="DEX-8d-L5A" secondAttribute="centerX" id="wKm-4X-aoi"/>
@@ -407,6 +480,7 @@
                     </view>
                     <connections>
                         <outlet property="printer_select" destination="Iyh-3d-acj" id="41c-Rc-C0e"/>
+                        <outlet property="spinner" destination="sCL-F9-Zpd" id="GQz-BU-2tT"/>
                         <outlet property="token_field" destination="2Mf-Ta-ozY" id="6Ce-af-fQ0"/>
                     </connections>
                 </viewController>
@@ -415,4 +489,7 @@
             <point key="canvasLocation" x="729" y="698"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+    </resources>
 </document>

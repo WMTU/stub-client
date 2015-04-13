@@ -1,4 +1,4 @@
- //
+//
 //  LoginController.swift
 //  Stub
 //
@@ -31,6 +31,9 @@ class LoginController: NSViewController {
     @IBAction func login(sender: AnyObject) {
         get_token(self.email.stringValue, password: self.password.stringValue)
     }
+    @IBAction func password_submit(sender: AnyObject) {
+        get_token(self.email.stringValue, password: self.password.stringValue)
+    }
     
     func get_token(email: String, password: String) {
         var params = [
@@ -47,8 +50,21 @@ class LoginController: NSViewController {
     }
     
     func handle_token_response(request:NSURLRequest, response:NSHTTPURLResponse?, json: AnyObject?, error: NSError?) {
-        appDelegate!.token = json?["key"] as! String
-        performSegueWithIdentifier("loggedIn", sender: self)
+        if error == nil {
+            appDelegate!.token = json?["key"] as! String
+            performSegueWithIdentifier("loggedIn", sender: self)
+        } else {
+            println("Get Token returned error")
+            set_red_border(email)
+            set_red_border(password)
+        }
+    }
+    
+    func set_red_border(field:NSView){
+        field.layer?.cornerRadius = 1.0
+        field.layer?.masksToBounds = true
+        field.layer?.borderColor = NSColor( red: 255/255, green: 65/255, blue:54/255, alpha: 0.5 ).CGColor
+        field.layer?.borderWidth = 3.0
     }
 }
 
