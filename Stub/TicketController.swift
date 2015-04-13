@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import CoreData
+import Alamofire
 
 class TicketController: NSViewController {
     

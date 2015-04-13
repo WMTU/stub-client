@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CoreData
 import Alamofire
 
 class LoginController: NSViewController {
@@ -39,9 +40,27 @@ class LoginController: NSViewController {
             ]
         ]
         
+        var controller = self
+        
         Alamofire.request(.POST, "http://localhost:3000/api/tokens.json", parameters: params, encoding: .JSON)
         .responseJSON { (_, _, JSON, _) in
-            println(JSON)
+            let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext!
+            let entity =  NSEntityDescription.entityForName("Token", inManagedObjectContext: managedContext)
+            let token = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            
+            
+            token.setValue(JSON?["key"], forKey: "token_key")
+            token.setValue(NSDate(string: JSON?["created_at"] as! String), forKey: "created_at")
+            token.setValue(NSDate(string: JSON?["updated_at"] as! String), forKey: "updated_at")
+            token.setValue(JSON?["user_id"], forKey: "user_id")
+            
+            var error: NSError?
+            if !managedContext.save(&error) {
+                println("Could not save \(error), \(error?.userInfo)")
+            } else {
+                controller.performSegueWithIdentifier("loggedIn", sender: self)
+            }
         }
     }
 }
