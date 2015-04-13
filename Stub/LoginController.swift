@@ -29,7 +29,6 @@ class LoginController: NSViewController {
 
     @IBAction func login(sender: AnyObject) {
         get_token(self.email.stringValue, password: self.password.stringValue)
-        performSegueWithIdentifier("loggedIn", sender: self)
     }
     
     func get_token(email: String, password: String) {
@@ -40,7 +39,8 @@ class LoginController: NSViewController {
             ]
         ]
         
-        Alamofire.request(.POST, "http://localhost:3000/api/tokens.json", parameters: params).responseJSON { (_, _, JSON, _) in
+        Alamofire.request(.POST, "http://localhost:3000/api/tokens.json", parameters: params, encoding: .JSON)
+        .responseJSON { (_, _, JSON, _) in
             println(JSON)
         }
     }
