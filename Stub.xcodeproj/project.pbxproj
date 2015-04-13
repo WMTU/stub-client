@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		4D72F7E71ADB19FA004CB39A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F7E61ADB19FA004CB39A /* AppDelegate.swift */; };
 		4D72F7E91ADB19FA004CB39A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F7E81ADB19FA004CB39A /* LoginController.swift */; };
-		4D72F7EC1ADB19FA004CB39A /* Stub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F7EA1ADB19FA004CB39A /* Stub.xcdatamodeld */; };
 		4D72F7EE1ADB19FA004CB39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D72F7ED1ADB19FA004CB39A /* Images.xcassets */; };
 		4D72F7F11ADB19FA004CB39A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D72F7EF1ADB19FA004CB39A /* Main.storyboard */; };
 		4D72F7FD1ADB19FA004CB39A /* StubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F7FC1ADB19FA004CB39A /* StubTests.swift */; };
 		4DC5FDF71ADB433900545B6C /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */; };
-		4DC5FDFF1ADB58EC00545B6C /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FDFE1ADB58EC00545B6C /* Token.swift */; };
 		4DD947BC1ADB25C300DE6338 /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD947BB1ADB25C300DE6338 /* TicketController.swift */; };
 		811524B00DAD75B5715836BD /* Pods_Stub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3163F298B9917A75FE52EFB /* Pods_Stub.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -35,14 +33,12 @@
 		4D72F7E51ADB19FA004CB39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D72F7E61ADB19FA004CB39A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D72F7E81ADB19FA004CB39A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		4D72F7EB1ADB19FA004CB39A /* Stub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stub.xcdatamodel; sourceTree = "<group>"; };
 		4D72F7ED1ADB19FA004CB39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D72F7F01ADB19FA004CB39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D72F7F61ADB19FA004CB39A /* StubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D72F7FB1ADB19FA004CB39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D72F7FC1ADB19FA004CB39A /* StubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubTests.swift; sourceTree = "<group>"; };
 		4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
-		4DC5FDFE1ADB58EC00545B6C /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		4DD947BB1ADB25C300DE6338 /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
 		87C5DF1E7A634AD0E2AFB0C8 /* Pods-Stub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stub/Pods-Stub.release.xcconfig"; sourceTree = "<group>"; };
 		B3163F298B9917A75FE52EFB /* Pods_Stub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,12 +86,10 @@
 		4D72F7E31ADB19FA004CB39A /* Stub */ = {
 			isa = PBXGroup;
 			children = (
-				4DC5FDFE1ADB58EC00545B6C /* Token.swift */,
 				4D72F7E61ADB19FA004CB39A /* AppDelegate.swift */,
 				4D72F7E81ADB19FA004CB39A /* LoginController.swift */,
 				4D72F7ED1ADB19FA004CB39A /* Images.xcassets */,
 				4D72F7EF1ADB19FA004CB39A /* Main.storyboard */,
-				4D72F7EA1ADB19FA004CB39A /* Stub.xcdatamodeld */,
 				4D72F7E41ADB19FA004CB39A /* Supporting Files */,
 				4DD947BB1ADB25C300DE6338 /* TicketController.swift */,
 				4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */,
@@ -295,10 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D72F7EC1ADB19FA004CB39A /* Stub.xcdatamodeld in Sources */,
 				4DD947BC1ADB25C300DE6338 /* TicketController.swift in Sources */,
 				4DC5FDF71ADB433900545B6C /* ReplaceSegue.swift in Sources */,
-				4DC5FDFF1ADB58EC00545B6C /* Token.swift in Sources */,
 				4D72F7E91ADB19FA004CB39A /* LoginController.swift in Sources */,
 				4D72F7E71ADB19FA004CB39A /* AppDelegate.swift in Sources */,
 			);
@@ -505,19 +497,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4D72F7EA1ADB19FA004CB39A /* Stub.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4D72F7EB1ADB19FA004CB39A /* Stub.xcdatamodel */,
-			);
-			currentVersion = 4D72F7EB1ADB19FA004CB39A /* Stub.xcdatamodel */;
-			path = Stub.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4D72F7D91ADB19FA004CB39A /* Project object */;
 }

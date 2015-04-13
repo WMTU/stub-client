@@ -1,4 +1,4 @@
-//
+ //
 //  LoginController.swift
 //  Stub
 //
@@ -7,19 +7,19 @@
 //
 
 import Cocoa
-import CoreData
 import Alamofire
 
 class LoginController: NSViewController {
 
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var password: NSSecureTextField!
-    
+    var appDelegate: AppDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.appDelegate = (NSApplication.sharedApplication().delegate as! AppDelegate)
     }
 
     override var representedObject: AnyObject? {
@@ -42,26 +42,13 @@ class LoginController: NSViewController {
         
         var controller = self
         
-        Alamofire.request(.POST, "http://localhost:3000/api/tokens.json", parameters: params, encoding: .JSON)
-        .responseJSON { (_, _, JSON, _) in
-            let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext!
-            let entity =  NSEntityDescription.entityForName("Token", inManagedObjectContext: managedContext)
-            let token = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-            
-            
-            token.setValue(JSON?["key"], forKey: "token_key")
-            token.setValue(NSDate(string: JSON?["created_at"] as! String), forKey: "created_at")
-            token.setValue(NSDate(string: JSON?["updated_at"] as! String), forKey: "updated_at")
-            token.setValue(JSON?["user_id"], forKey: "user_id")
-            
-            var error: NSError?
-            if !managedContext.save(&error) {
-                println("Could not save \(error), \(error?.userInfo)")
-            } else {
-                controller.performSegueWithIdentifier("loggedIn", sender: self)
-            }
-        }
+        Alamofire.request(.POST, appDelegate!.host + "/api/tokens.json", parameters: params, encoding: .JSON)
+        .responseJSON(completionHandler: handle_token_response)
+    }
+    
+    func handle_token_response(request:NSURLRequest, response:NSHTTPURLResponse?, json: AnyObject?, error: NSError?) {
+        appDelegate!.token = json?["key"] as! String
+        performSegueWithIdentifier("loggedIn", sender: self)
     }
 }
 

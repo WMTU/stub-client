@@ -361,9 +361,36 @@
                                     <action selector="print_dj:" target="bjB-N0-Tco" id="uC4-2Q-Z9e"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNz-Gc-chI">
+                                <rect key="frame" x="18" y="45" width="444" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="2Mf-Ta-ozY">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iyh-3d-acj">
+                                <rect key="frame" x="128" y="177" width="225" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="69P-iq-If3"/>
+                                    <constraint firstAttribute="width" constant="220" id="DjX-dY-Kwt"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="QPq-kT-jQk">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" title="Printer Select" id="dEW-jI-eBa">
+                                        <items>
+                                            <menuItem title="Item 1" id="dAe-Pf-6fl"/>
+                                            <menuItem title="Item 2" id="RKW-Aj-GDl"/>
+                                            <menuItem title="Item 3" id="ZUB-Bz-sO5"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="GoA-l2-Hmf" secondAttribute="centerX" id="0O6-so-0z0"/>
+                            <constraint firstAttribute="trailing" secondItem="Iyh-3d-acj" secondAttribute="trailing" constant="130" id="5Re-R6-FUj"/>
                             <constraint firstItem="8Jc-Jv-pjS" firstAttribute="centerY" secondItem="GoA-l2-Hmf" secondAttribute="centerY" id="8hf-KA-4At"/>
                             <constraint firstAttribute="trailing" secondItem="DEX-8d-L5A" secondAttribute="trailing" constant="35" id="KxC-8t-Ekt"/>
                             <constraint firstItem="GoA-l2-Hmf" firstAttribute="leading" secondItem="HkP-Gm-K4k" secondAttribute="trailing" constant="8" id="NcH-33-SmL"/>
@@ -375,12 +402,17 @@
                             <constraint firstItem="82W-aX-Bv7" firstAttribute="top" secondItem="DEX-8d-L5A" secondAttribute="bottom" constant="8" id="v2t-09-PbF"/>
                             <constraint firstItem="8Jc-Jv-pjS" firstAttribute="leading" secondItem="GoA-l2-Hmf" secondAttribute="trailing" constant="8" id="wD0-oA-0Vl"/>
                             <constraint firstAttribute="centerX" secondItem="DEX-8d-L5A" secondAttribute="centerX" id="wKm-4X-aoi"/>
+                            <constraint firstItem="Iyh-3d-acj" firstAttribute="top" secondItem="82W-aX-Bv7" secondAttribute="bottom" constant="8" id="ycg-mt-Rob"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="printer_select" destination="Iyh-3d-acj" id="41c-Rc-C0e"/>
+                        <outlet property="token_field" destination="2Mf-Ta-ozY" id="6Ce-af-fQ0"/>
+                    </connections>
                 </viewController>
                 <customObject id="Vys-aj-HHY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="586"/>
+            <point key="canvasLocation" x="729" y="698"/>
         </scene>
     </scenes>
 </document>
