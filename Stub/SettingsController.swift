@@ -34,7 +34,7 @@ class SettingsController: NSViewController {
     }
     
     @IBAction func server_box(sender: NSTextField) {
-        println(sender.stringValue)
+        print(sender.stringValue)
         update_server_settings(sender)
     }
     

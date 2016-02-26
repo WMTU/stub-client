@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var host:String = ""
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.stringForKey("host") != nil) {
             host = defaults.stringForKey("host")!

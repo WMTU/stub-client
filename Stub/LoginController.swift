@@ -14,6 +14,7 @@ class LoginController: NSViewController {
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var password: NSSecureTextField!
     var appDelegate: AppDelegate?
+    var manager = Alamofire.Manager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,25 +37,39 @@ class LoginController: NSViewController {
     }
     
     func get_token(email: String, password: String) {
-        var params = [
+        let params = [
             "session": [
                 "email": email,
                 "password": password
             ]
         ]
         
-        var controller = self
+        // Trim protocol from hostname
+        var hostname = appDelegate!.host
+        hostname = hostname.stringByReplacingOccurrencesOfString("https://", withString: "")
+        hostname = hostname.stringByReplacingOccurrencesOfString("http://", withString: "")
         
-        Alamofire.request(.POST, appDelegate!.host + "/api/tokens.json", parameters: params, encoding: .JSON)
+        // Setup Server Trust Policies
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            hostname: .DisableEvaluation
+        ]
+        manager = Alamofire.Manager(
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
+        
+        
+        manager.request(.POST, appDelegate!.host + "/api/tokens.json", parameters: params, encoding: .JSON)
         .responseJSON(completionHandler: handle_token_response)
     }
     
-    func handle_token_response(request:NSURLRequest, response:NSHTTPURLResponse?, json: AnyObject?, error: NSError?) {
-        if error == nil {
-            appDelegate!.token = json?["key"] as! String
+    func handle_token_response(response:Response<AnyObject, NSError>) {
+        if let value = response.result.value?["key"]! {
+            debugPrint(response.result)
+            appDelegate!.token = value as! String
             performSegueWithIdentifier("loggedIn", sender: self)
         } else {
-            println("Get Token returned error")
+            print("Get Token returned error")
+            debugPrint(response.result)
             set_red_border(email)
             set_red_border(password)
         }

@@ -15,7 +15,7 @@
 		4DC5FDF71ADB433900545B6C /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FDF61ADB433900545B6C /* ReplaceSegue.swift */; };
 		4DD947BC1ADB25C300DE6338 /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD947BB1ADB25C300DE6338 /* TicketController.swift */; };
 		4DEE192D1ADBF9C100813350 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE192C1ADBF9C100813350 /* SettingsController.swift */; };
-		811524B00DAD75B5715836BD /* Pods_Stub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3163F298B9917A75FE52EFB /* Pods_Stub.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		811524B00DAD75B5715836BD /* Pods_Stub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3163F298B9917A75FE52EFB /* Pods_Stub.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,7 +189,9 @@
 		4D72F7D91ADB19FA004CB39A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = WMTU;
 				TargetAttributes = {
 					4D72F7E01ADB19FA004CB39A = {
@@ -351,6 +353,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -418,6 +421,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Stub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wmtu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -430,6 +434,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Stub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wmtu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -449,6 +454,7 @@
 				);
 				INFOPLIST_FILE = StubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wmtu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stub.app/Contents/MacOS/Stub";
 			};
@@ -465,6 +471,7 @@
 				);
 				INFOPLIST_FILE = StubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wmtu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stub.app/Contents/MacOS/Stub";
 			};

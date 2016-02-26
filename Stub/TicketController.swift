@@ -14,7 +14,8 @@ class TicketController: NSViewController {
     @IBOutlet weak var printer_select: NSPopUpButton!
     @IBOutlet weak var spinner: NSProgressIndicator!
     
-    var manager = Alamofire.Manager(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    var manager = Alamofire.Manager()
+    var auth_headers = [String : String]()
     var appDelegate: AppDelegate?
     
     override func viewDidLoad() {
@@ -22,11 +23,25 @@ class TicketController: NSViewController {
         
         self.appDelegate = (NSApplication.sharedApplication().delegate as! AppDelegate)
         
+        // Trim protocol from hostname
+        var hostname = appDelegate!.host
+        hostname = hostname.stringByReplacingOccurrencesOfString("https://", withString: "")
+        hostname = hostname.stringByReplacingOccurrencesOfString("http://", withString: "")
+        
         // Setup auth token
         token_field.title = appDelegate!.token
-        manager.session.configuration.HTTPAdditionalHeaders = [
+        auth_headers = [
             "Authorization": "Token token=" + appDelegate!.token
         ]
+        
+        // Setup Server Trust Policies
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            hostname: .DisableEvaluation
+        ]
+        print(serverTrustPolicies)
+        manager = Alamofire.Manager(
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
         
         // Get available printers
         let task = NSTask()
@@ -46,7 +61,7 @@ class TicketController: NSViewController {
         for line in lines {
             var tokens:Array = line.componentsSeparatedByString(" ")
             if tokens.count > 2 {
-                printer_select.addItemWithTitle(tokens[1] as! String)
+                printer_select.addItemWithTitle(tokens[1] )
             }
         }
         
@@ -65,34 +80,33 @@ class TicketController: NSViewController {
     @IBAction func print_dj(sender: AnyObject) {
         spinner.hidden = false
         spinner.startAnimation(self)
-        manager.request(.POST, appDelegate!.host + "/api/tickets/dj")
-        .responseString { (_, _, string, _) in
+        manager.request(.POST, appDelegate!.host + "/api/tickets/dj", headers: auth_headers)
+        .responseString { response in
             self.spinner.hidden = true
             self.spinner.stopAnimation(self)
-            self.print_label(string!)
+            self.print_label(response.result.value!)
         }
-        
     }
 
     @IBAction func print_both(sender: AnyObject) {
         spinner.hidden = false
         spinner.startAnimation(self)
-        manager.request(.POST, appDelegate!.host + "/api/tickets/both")
-        .responseString { (_, _, string, _) in
+        manager.request(.POST, appDelegate!.host + "/api/tickets/both", headers: auth_headers)
+        .responseString { response in
             self.spinner.hidden = true
             self.spinner.stopAnimation(self)
-            self.print_label(string!)
+            self.print_label(response.result.value!)
         }
     }
     
     @IBAction func print_band(sender: AnyObject) {
         spinner.hidden = false
         spinner.startAnimation(self)
-        manager.request(.POST, appDelegate!.host + "/api/tickets/band")
-        .responseString { (_, _, string, _) in
+        manager.request(.POST, appDelegate!.host + "/api/tickets/band", headers: auth_headers)
+        .responseString { response in
             self.spinner.hidden = true
             self.spinner.stopAnimation(self)
-            self.print_label(string!)
+            self.print_label(response.result.value!)
         }
     }
     
